@@ -13,31 +13,54 @@ const hash = window.location.hash
 }, {});
 window.location.hash = '';
 
-// Set token
 let _token = hash.access_token;
 
 
-// Make a call using the token
+// stylize poster
 $.ajax({
    url: "https://api.spotify.com/v1/me/top/artists",
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
-     // Do something with the returned data
-     
-       console.log(data);
+    
+    console.log(data);
        
-       let chosen = data.items[Math.floor((Math.random() * 20) + 1)];
+    let chosen = data.items[Math.floor((Math.random() * 20) + 1)];
        
-       console.log(chosen);
+    console.log(chosen);
+    var img = document.createElement('img');
+    img.crossOrigin = "Anonymous";
+
+    img.setAttribute('src', chosen.images[0].url)
+
+    img.addEventListener('load', function() {
+        var vibrant = new Vibrant(img);
+        var swatches = vibrant.swatches()
+        console.log(swatches);
+        for (var swatch in swatches)
+            if (swatches.hasOwnProperty(swatch) && swatches[swatch])
+                console.log(swatch, swatches[swatch].getHex())
+
+        $(".poster").css("background-color",  swatches['Muted'].getHex());
+
        
-       $(".poster").css("background-image", "url('" + chosen.images[0].url + "')");
-       
-        $('.poster').primaryColor({
-                callback: function(color) {
-                    $('.poster').css('background', 'rgb('+color+')');
-                }
-            });
+        $(".poster").css("background-image", "url('" + chosen.images[0].url + "')");
+        
+        $(".poster").css("background-size", "cover");
+        
+        $(".poster-text").css("color",  swatches['LightVibrant'].getHex());
+        
+        
+        /*
+         * Results into:
+         * Vibrant #7a4426
+         * Muted #7b9eae
+         * DarkVibrant #348945
+         * DarkMuted #141414
+         * LightVibrant #f3ccb4
+         */
+    });
+
        
        data.items.map(function(artist) {
        let item = $('<li>' + artist.name + '</li>');
@@ -64,16 +87,4 @@ if (!_token) {
   window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
 }
 
-}
-
-
-function getImage(artist){
-    
-  $.ajax({
-  url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + artist + '&api_key=2b35547bd5675d8ecb2b911ee9901f59&format=json',
-  success: function(data) {
-    console.log(data.artist);
-  }
-})
-    
 }
