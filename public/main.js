@@ -28,6 +28,30 @@ $.ajax({
     let chosen = data.items[Math.floor((Math.random() * 20) + 1)];
        
     console.log(chosen);
+       
+    $(".poster-text").html(chosen.name);
+       
+    
+    // Do supporting acts?
+    
+    if(Math.random() > .5){
+        
+        for(let i = 0; i < 2; i++){
+
+             let artist = data.items[Math.floor((Math.random() * 20) + 1)];
+            
+            if(artist.name == chosen.name){
+                i--; continue;
+            }
+            
+            $(".poster-supportingacts").append("<strong>" + artist.name + "</strong>");
+            
+        }
+
+    }
+       
+       
+       
     var img = document.createElement('img');
     img.crossOrigin = "Anonymous";
 
@@ -41,14 +65,18 @@ $.ajax({
             if (swatches.hasOwnProperty(swatch) && swatches[swatch])
                 console.log(swatch, swatches[swatch].getHex())
 
-        $(".poster").css("background-color",  swatches['Muted'].getHex());
+        $(".poster").css("background-color",  swatches['DarkMuted'].getHex());
+        
+        styleLoc();
 
-       
-        $(".poster").css("background-image", "url('" + chosen.images[0].url + "')");
+        //$(".solid-overlay").css("background-color",  swatches['DarkMuted'].getHex());
+        $(".poster-image").css("background-image", "url('" + chosen.images[0].url + "')");
         
-        $(".poster").css("background-size", "cover");
+        $(".poster-image").css("background-size", "cover");
         
-        $(".poster-text").css("color",  swatches['LightVibrant'].getHex());
+        $(".poster-text").addClass("poster-text-2");
+        
+        $(".poster-text").css("color",  swatches['Vibrant'].getHex());
         
         
         /*
@@ -69,7 +97,34 @@ $.ajax({
    }
 });
 
-
+function styleLoc(){
+    
+    switch( Math.floor(Math.random() * 6) ){
+        case 0:
+            $(".poster-image").css("background-position", "20% 20%")
+            break;
+        case 1:
+            $(".poster-image").css("background-position", "bottom right")
+            
+            break;
+        case 2:
+            $(".poster-image").css("background-position", "90% 20%")
+            break;
+        case 3:
+            $(".poster-image").css("background-position", "10% 50%")
+            break;
+        case 4:
+            $(".poster-image").css("background-position", "bottom right")
+            break;
+        case 5:
+            $(".poster-image").css("background-position", "90% 20%")
+            break;
+        case 6:
+            $(".poster-image").css("background-position", "10% 50%")
+            break;
+    }
+    
+}
 
 // prompt authentication
 function loadSpotify(){

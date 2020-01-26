@@ -2,6 +2,17 @@
   padding: 2em;
   box-sizing: border-box; }
 
+.poster-image {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-repeat: none;
+  background-size: cover;
+  background-color: #f7ebd5;
+  background-image: url(https://i.scdn.co/image/82e1658be6688ee69d8d1c2bb9be33670e5e1a6d); }
+
 .poster {
   display: flex;
   position: relative;
@@ -9,13 +20,24 @@
   height: 1277px;
   max-width: 80vw;
   box-sizing: border-box;
-  background-color: #f7ebd5;
-  background-image: url(https://i.scdn.co/image/bbd086624a222bb8a528abea07acc91ff4124cb4);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   mix-blend-mode: multiply;
-  margin: auto; }
+  margin: auto;
+  overflow: hidden; }
+  @media only screen and (min-width: 600px) {
+    .poster {
+      max-height: 100vh;
+      max-width: auto; } }
+
+.solid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: #b49a54;
+  mix-blend-mode: overlay; }
 
 .poster-overlay-1 {
   position: absolute;
@@ -38,14 +60,40 @@
   height: 100%; }
 
 .poster-text {
-  top: 0;
-  left: 0;
+  position: relative;
+  text-align: center;
   margin: auto;
-  font-size: 3.4em;
-  width: 60%;
-  text-align: center; }
+  padding: 1em;
+  box-sizing: border-box;
+  font-size: 48px;
+  filter: saturate(7) blur(0.5px); }
+
+.poster-text-2 {
+  font-size: 7em;
+  top: -10%;
+  left: -30%;
+  font-family: "Termina";
+  font-stretch: expanded;
+  font-weight: 800;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 .poster-text-1 {
   font-family: "Termina";
   font-weight: 800; }
+
+.poster-supportingacts {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 2em;
+  padding: 1em; }
+
+.poster-supportingacts strong {
+  margin: 0 .5em;
+  display: inline-block;
+  font-family: "Sailec"; }
 
