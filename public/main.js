@@ -15,8 +15,8 @@ window.location.hash = '';
 
 let _token = hash.access_token;
 
-
 // stylize poster
+
 $.ajax({
    url: "https://api.spotify.com/v1/me/top/artists",
    type: "GET",
@@ -51,6 +51,7 @@ $.ajax({
     }
        
        
+    // set image and fetch palette
        
     var img = document.createElement('img');
     img.crossOrigin = "Anonymous";
@@ -74,7 +75,7 @@ $.ajax({
         
         $(".poster-image").css("background-size", "cover");
         
-        $(".poster-text").addClass("poster-text-2");
+      //  $(".poster-text").addClass("poster-text-2");
         
         $(".poster-text").css("color",  swatches['Vibrant'].getHex());
         
@@ -102,25 +103,59 @@ function styleLoc(){
     switch( Math.floor(Math.random() * 6) ){
         case 0:
             $(".poster-image").css("background-position", "20% 20%")
+            
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
         case 1:
             $(".poster-image").css("background-position", "bottom right")
             
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+                
+            
             break;
         case 2:
             $(".poster-image").css("background-position", "90% 20%")
+            
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
         case 3:
             $(".poster-image").css("background-position", "10% 50%")
+            
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
         case 4:
             $(".poster-image").css("background-position", "bottom right")
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
         case 5:
             $(".poster-image").css("background-position", "90% 20%")
+            
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
         case 6:
             $(".poster-image").css("background-position", "10% 50%")
+            
+            $(".poster-text")
+                .css("top", "100px")
+                .css("left", "100px");
+            
             break;
     }
     
