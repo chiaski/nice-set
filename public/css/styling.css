@@ -1,0 +1,50 @@
+.poster-container {
+  padding: 2em;
+  box-sizing: border-box; }
+
+.poster {
+  display: flex;
+  position: relative;
+  width: 830px;
+  height: 1277px;
+  max-width: 80vw;
+  box-sizing: border-box;
+  background: #f7ebd5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  mix-blend-mode: multiply;
+  margin: auto; }
+
+.poster-overlay-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/texture-multiply.png);
+  mix-blend-mode: multiply;
+  background-size: cover;
+  width: 100%;
+  height: 100%; }
+
+.poster-overlay-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/texture-screen.png);
+  background-size: cover;
+  mix-blend-mode: screen;
+  width: 100%;
+  height: 100%; }
+
+.poster-text {
+  top: 0;
+  left: 0;
+  margin: auto;
+  font-size: 3.4em;
+  width: 60%;
+  text-align: center; }
+
+.poster-text-1 {
+  font-family: "Termina";
+  font-weight: 800; }
+
