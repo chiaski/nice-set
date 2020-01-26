@@ -70,7 +70,6 @@ $.ajax({
         
         styleLoc();
 
-        //$(".solid-overlay").css("background-color",  swatches['DarkMuted'].getHex());
         $(".poster-image").css("background-image", "url('" + chosen.images[0].url + "')");
         
         $(".poster-image").css("background-size", "cover");
@@ -78,7 +77,6 @@ $.ajax({
       //  $(".poster-text").addClass("poster-text-2");
         
         $(".poster-text").css("color",  swatches['Vibrant'].getHex());
-        
         
         /*
          * Results into:
@@ -100,7 +98,7 @@ $.ajax({
 
 function styleLoc(){
     
-    switch( Math.floor(Math.random() * 6) ){
+    switch( Math.floor(Math.random() * 2) ){
         case 0:
             $(".poster-image").css("background-position", "20% 20%")
             
