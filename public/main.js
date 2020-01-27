@@ -98,8 +98,10 @@ $.ajax({
 
 function styleLoc(){
     
-    switch( Math.floor(Math.random() * 2) ){
+    switch( Math.floor(Math.random() * 1)){
         case 0:
+            console.log("style 0");
+            
             $(".poster-image").css("background-position", "20% 20%")
             
             $(".poster-text")
@@ -108,6 +110,9 @@ function styleLoc(){
             
             break;
         case 1:
+            
+            console.log("style 1");
+            
             $(".poster-image").css("background-position", "bottom right")
             
             $(".poster-text")
