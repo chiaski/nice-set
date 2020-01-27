@@ -98,28 +98,26 @@ $.ajax({
 
 function styleLoc(){
     
-    switch( Math.floor(Math.random() * 1)){
+    switch( Math.floor(Math.random() * 1) + 1){
         case 0:
             console.log("style 0");
             
-            $(".poster-image").css("background-position", "20% 20%")
+            $(".poster-image").css("background-position", "center left");
             
-            $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+            $(".poster-text").addClass("poster-text-2");
             
             break;
         case 1:
             
-            console.log("style 1");
+            console.log("style 1: gray");
             
             $(".poster-image").css("background-position", "bottom right")
             
-            $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+            $(".poster-text").addClass("gray");
+            $(".solid-overlay").addClass("gray");
+            $(".poster-image").addClass("gray");
                 
-            
+
             break;
         case 2:
             $(".poster-image").css("background-position", "90% 20%")
