@@ -16,6 +16,9 @@ let _token = hash.access_token;
 
 // stylize poster
 
+var artists;
+
+
 $.ajax({
    url: "https://api.spotify.com/v1/me/top/artists",
    type: "GET",
@@ -23,8 +26,27 @@ $.ajax({
    success: function(data) { 
     
     console.log(data);
+		artists = data;
+     
+    
+		 genArtist(data);
        
-    let chosen = data.items[Math.floor((Math.random() * 20) + 1)];
+       data.items.map(function(artist) {
+       let item = $('<li>' + artist.name + '</li>');
+       item.appendTo($('#top-artists'));
+     });
+   }
+});
+
+
+function genArtist(data){
+	console.log(artists);
+	
+	if(data === undefined){
+		data = artists;
+	}
+	
+	let chosen = data.items[Math.floor((Math.random() * 20) + 1)];
        
     console.log(chosen);
        
@@ -49,7 +71,7 @@ $.ajax({
     }
        
 		 var d = new Date();
-		$("._date").text(d.getMonth() + 1+ " " + d.getDay() + " " + d.getFullYear());
+		$("._date").text(d.getMonth() + 1+ "." + d.getDay() + "." + d.getFullYear());
        
     // set image and fetch palette
        
@@ -88,13 +110,9 @@ $.ajax({
          */
     });
 
-       
-       data.items.map(function(artist) {
-       let item = $('<li>' + artist.name + '</li>');
-       item.appendTo($('#top-artists'));
-     });
-   }
-});
+	
+	
+}
 
 
 function styleLoc(){
