@@ -30,7 +30,6 @@ $.ajax({
        
     $("._topartist").text(chosen.name);
        
-    
     // Do supporting acts?
     
     if(Math.random() > .5){
@@ -122,42 +121,44 @@ function styleLoc(){
 
             break;
         case 2:
+            console.log("style 2: gray");
             $(".poster-image").css("background-position", "90% 20%")
             
             $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+                .css("margin-bottom", "200px")
+                .css("margin-top", "auto");
             
             break;
         case 3:
+            console.log("style 3: gray");
+				
             $(".poster-image").css("background-position", "10% 50%")
             
-            $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
             
             break;
         case 4:
-            $(".poster-image").css("background-position", "bottom right")
-            $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+            console.log("style 4: gray");
+				
+            $(".poster-image").css("background-position", "bottom right");
+				
             
             break;
         case 5:
+            console.log("style 5: gray");
+				
             $(".poster-image").css("background-position", "90% 20%")
             
             $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+                .css("margin-bottom", "100px");
             
             break;
         case 6:
+            console.log("style 6: gray");
+				
             $(".poster-image").css("background-position", "10% 50%")
             
             $(".poster-text")
-                .css("top", "100px")
-                .css("left", "100px");
+                .css("margin-bottom", "100px");
             
             break;
     }
