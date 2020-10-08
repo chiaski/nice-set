@@ -91,9 +91,9 @@
   !*** ./public/css/stylesheet.scss ***!
   \************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./public/css/stylesheet.scss?");
+eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: Invalid CSS after \\\"\\tpadding: -top\\\": expected \\\"}\\\", was \\\": 5%;\\\"\\n        on line 129 of /Users/chia/Desktop/Chia/Create/nice-set/public/css/stylesheet.scss\\n>> \\tpadding: -top: 5%;\\n\\n   -----------^\\n\\n    at /Users/chia/Desktop/Chia/Create/nice-set/node_modules/webpack/lib/NormalModule.js:316:20\\n    at /Users/chia/Desktop/Chia/Create/nice-set/node_modules/loader-runner/lib/LoaderRunner.js:367:11\\n    at /Users/chia/Desktop/Chia/Create/nice-set/node_modules/loader-runner/lib/LoaderRunner.js:233:18\\n    at context.callback (/Users/chia/Desktop/Chia/Create/nice-set/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\\n    at Object.callback (/Users/chia/Desktop/Chia/Create/nice-set/node_modules/sass-loader/dist/index.js:73:7)\\n    at Object.done [as callback] (/Users/chia/Desktop/Chia/Create/nice-set/node_modules/neo-async/async.js:8067:18)\\n    at options.error (/Users/chia/Desktop/Chia/Create/nice-set/node_modules/node-sass/lib/index.js:294:32)\");\n\n//# sourceURL=webpack:///./public/css/stylesheet.scss?");
 
 /***/ }),
 

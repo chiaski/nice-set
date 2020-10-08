@@ -89,7 +89,8 @@
 .poster-text{
     position: relative;
     text-align: center;
-    margin:auto;
+		margin-top: auto;
+		margin-bottom: 10%;
     width:200vh;
     padding: 1em;
     box-sizing: border-box;
@@ -119,6 +120,16 @@
     transform: rotate(90deg);
 }
 
+._topartist{
+	font-size: 1em !important;
+	line-height: 1em ;
+}
+
+._date{
+	padding: -top: 5%;
+	display: block;
+	font-size: .6em;
+}
 
 /* POSTER STYLES */
 

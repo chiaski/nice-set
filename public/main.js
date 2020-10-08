@@ -1,5 +1,4 @@
 
-
 // Get the hash of the url
 const hash = window.location.hash
 .substring(1)
@@ -29,7 +28,7 @@ $.ajax({
        
     console.log(chosen);
        
-    $(".poster-text").html(chosen.name);
+    $("._topartist").text(chosen.name);
        
     
     // Do supporting acts?
@@ -50,6 +49,8 @@ $.ajax({
 
     }
        
+		 var d = new Date();
+		$("._date").text(d.getMonth() + 1+ " " + d.getDay() + " " + d.getFullYear());
        
     // set image and fetch palette
        
@@ -95,6 +96,7 @@ $.ajax({
      });
    }
 });
+
 
 function styleLoc(){
     
